@@ -1,0 +1,61 @@
+package net.ats.api.asserts;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class Asserts {
+	
+	private static Log LOGGER = LogFactory.getLog(Asserts.class);
+
+	/**
+	 * 判断期望的json串中的值与实际json串中对应的值相等
+	 * @param actual
+	 * @param expected
+	 * @return
+	 */
+	public static AssertResult assertJson(String actual, String expected){
+		List<AssertResult> resultList = new ArrayList<AssertResult>();
+		JSONObject actJson = new JSONObject(actual);
+		JSONObject expJson = new JSONObject(expected);
+		for(String name:expJson.keySet()){
+			Object expValue = expJson.get(name);
+			Object actValue = actJson.get(name);
+			if(expValue instanceof JSONObject){
+				resultList.add(assertJson(String.valueOf(actJson.get(name)), String.valueOf(expValue)));
+			} else if(expValue instanceof JSONArray){
+				JSONArray expJsonArray = (JSONArray)expValue;
+				for(int i = 0; i < expJsonArray.length(); i++) {
+					JSONObject expOb = (JSONObject) expJsonArray.get(i);
+					JSONArray actJsonArray = (JSONArray)actValue;
+					for(int j = 0; j < actJsonArray.length(); j++) {
+						JSONObject actOb = (JSONObject) actJsonArray.get(j);
+						resultList.add(assertJson(actOb.toString(), expOb.toString()));
+					}
+				}
+			} else {
+				String message = "[" + name + "] expected:" + expValue + ", actual:" + actValue;
+				LOGGER.debug("---------->" + message);
+				if(null == expValue)
+					resultList.add(new AssertResult(null == actValue, message));
+				else{
+					boolean isEqual = String.valueOf(expValue).equals(String.valueOf(actValue));
+					resultList.add(new AssertResult(isEqual, message));
+				}
+			}
+		}
+		AssertResult result = new AssertResult(true, "");
+		for(AssertResult r : resultList){
+			if(!r.isSucc()){
+				result = r;
+				break;
+			}
+		}
+		return result;
+	}
+
+}

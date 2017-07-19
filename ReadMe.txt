@@ -1,0 +1,19 @@
+    <build>  
+            <plugins>  
+                <plugin>  
+                    <artifactId>maven-assembly-plugin</artifactId>  
+                    <configuration>  
+                        <archive>  
+                            <manifest>  
+                                <mainClass>com.allen.capturewebdata.Main</mainClass>  
+                            </manifest>  
+                        </archive>  
+                        <descriptorRefs>  
+                            <descriptorRef>jar-with-dependencies</descriptorRef>  
+                        </descriptorRefs>  
+                    </configuration>  
+                </plugin>  
+            </plugins>  
+        </build>  
+添加到pom.xml中
+打包命令：mvn assembly:assembly, 执行成功后会在target文件夹下多出一个以-jar-with-dependencies结尾的JAR包. 这个JAR包就包含了项目所依赖的所有JAR的CLASS。
