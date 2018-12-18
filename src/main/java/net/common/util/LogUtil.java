@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 
 /**
  * 
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 public class LogUtil {

@@ -12,7 +12,7 @@ import net.common.Consts;
 
 /**
  * 
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 public class StringUtil {

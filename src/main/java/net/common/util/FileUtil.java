@@ -17,7 +17,7 @@ import java.util.Properties;
 
 /**
  * 
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 

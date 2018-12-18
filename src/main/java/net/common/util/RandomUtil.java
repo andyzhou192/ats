@@ -6,7 +6,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * 
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 public class RandomUtil {

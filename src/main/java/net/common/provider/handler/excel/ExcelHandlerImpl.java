@@ -17,7 +17,7 @@ import net.common.util.LogUtil;
 
 /**
  * excel
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 public class ExcelHandlerImpl implements ExcelHandler {
