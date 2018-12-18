@@ -72,10 +72,10 @@ public class ExcelHandlerImpl implements ExcelHandler {
 	
 //	public static void main(String[] args) {
 //		ExcelHandlerImpl handler = new ExcelHandlerImpl();
-//		List<String[]> result1 = handler.readExcel("D:/workspace/RMS_webUI_Test/src/test/resources/com/cmcc/irms/webui/test/SecurityPolicyManageTest.xls",null);
+//		List<String[]> result1 = handler.readExcel("D:/workspace/RMS_webUI_Test/src/test/resources/net/andy/irms/webui/test/SecurityPolicyManageTest.xls",null);
 //		System.out.println("result1:" + result1.get(0)[0] + "--->" + result1.get(0)[1]);
 //		
-//		List<String[]> result2 = handler.readExcel("D:/workspace/RMS_webUI_Test/src/test/resources/com/cmcc/irms/webui/test/SecurityPolicyManageTest.xlsx",null);
+//		List<String[]> result2 = handler.readExcel("D:/workspace/RMS_webUI_Test/src/test/resources/net/andy/irms/webui/test/SecurityPolicyManageTest.xlsx",null);
 //		System.out.println("result2:" + result2.get(0)[0] + "--->" + result2.get(0)[1]);
 //	}
 

@@ -127,14 +127,14 @@ public class SSHHelper {
 	
 	
 //	public static void main(String args[]){
-//		String host = "218.205.81.11";
+//		String host = "10.10.10.10";
 //		int port = 22;
-//		String user = "zhangzhongkun";
-//		String pwd = "zhangzhongkun@cmcc";
+//		String user = "abc";
+//		String pwd = "123";
 //		init(host, port, user, pwd);
 //		
-//		String command1 = "pwd;ssh rcsm@10.3.1.170";
-//		String command2 = "rcsm;pwd;";
+//		String command1 = "pwd;ssh abc@10.10.10.10";
+//		String command2 = "abcpwd;";
 //		String exec = exec(command1);
 //		System.out.println("exec:" + exec);	
 //		String exec2 = exec(command2);
